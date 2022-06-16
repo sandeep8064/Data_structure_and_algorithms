@@ -1,34 +1,28 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-int majorityelement(int a[],int n)
-{
-   
-    for(int i=0;i<n;i++)
-    {    
-        int count=1;
-        for(int j=i+1;j<n;j++)
-        {
-            if(a[i]==a[j])
+ int majorityElement(int a[], int size)
+    {
+        
+        // your code here
+       int element = a[0];
+        int count = 1;
+        for (int i = 1; i < size; i++) {
+            if (a[i] != element) {
+                count--;
+            } else {
                 count++;
+            }
+            if (count < 0) {
+                element = a[i];
+                count = 1;
+            }
         }
         
-        if(count>n/2)
-            return i;
+        count = 0;
+        for (int i = 0; i < size; i++) {
+            if (a[i] == element)
+                count ++;
+        }
+        
+        return (count > size/2) ? element : -1;
+        
+       
     }
-    
-    return -1;
-}
-
-
-
-
-
-
-
-int main()
-{
-	int a[]={3,8,4,8,8};
-    cout<<majorityelement(a,5)<<endl;
-	return 0;
-}
