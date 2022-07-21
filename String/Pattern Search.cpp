@@ -15,3 +15,19 @@ bool search(string pat, string txt)
     	}
     	return false;
 }
+
+
+Another way -> Sliding Window  
+
+bool search(string pat, string txt, int q) 
+{ 
+	int m=txt.length();
+    int n=pat.length();
+    for(int i=0;i<m-n+1;i++) {
+        string r = txt.substr(i,n);  //generate an substring from index to size of pattern
+        if(r == pat) {
+            return true;
+        }
+    }
+    return false; 
+} 
