@@ -11,3 +11,4 @@
            }
        }
     }
+//count = number of zero index in begining

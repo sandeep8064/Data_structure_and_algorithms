@@ -10,7 +10,7 @@ int romanToInt(string s) {
             {'M',1000} };
         
         
-        int sum = m[s.back()];
+        int sum = m[s.back()]; // last number will always be added
         
         for(int i=0;i<s.size()-1;i++)
         {
